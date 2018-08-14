@@ -1,0 +1,44 @@
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+@import "devise_bootstrap_views";
+@import "rails_bootstrap_forms";
+
+body {
+    padding-top: 80px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-heigh: 1;
+}
+
+#logo {
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-size: 1.7em;
+    font-weight: bold;
+    &:hover {
+        color:#FFFFFF;
+        text-decoration: none;
+    }
+}
+
+footer {
+    margin-top: 45px;
+    a {
+        color: #555;
+        &:hover {
+            color: #222;
+        }
+    }
+    small {
+    float: left; 
+    }
+    ul {
+        float: right;
+        list-style: none;
+        li {
+            float: left;
+            margin-left: 15px;
+        }
+    }
+}

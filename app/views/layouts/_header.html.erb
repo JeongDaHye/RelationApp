@@ -1,0 +1,33 @@
+<header class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
+    <div class="container">
+        <%= link_to "Relation App", root_path, id: 'logo', class: 'navbar-brand'%>
+        <!--Toggle button-->
+       <button class="navbar-toggler"
+               type="button"
+               data-toggle="collapse"
+               data-target="#navbarNav"
+               aria-controls="navbarNav"
+               aria-expanded="false"
+               aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       
+       <!-- Nav bar -->
+       <nav class="collapse navbar-collapse" id="navbarNav">
+           <ul class="navbar-nav ml-uto">
+              <li class="nav-item"><%=link_to 'Home', '#', class: "nav-link"%></li>
+              <% if user_signed_in? %>
+                <li class="nav-item"><%=link_to 'Mypage', my_profile_path, class: "nav-link"%></li>
+              <% end %>
+              <li class="nav-item">
+                <% if !user_signed_in? %>
+                  <%=link_to 'Log in', new_user_session_path, class: "nav-link"%>
+                <% else %>
+                  <%=link_to 'Log out', destroy_user_session_path, method: :delete,
+                      data: { confirm: 'Log out 하시겠습니까? ' }, class: "nav-link"%>
+                <% end %>
+              </li>
+           </ul>
+       </nav>
+    </div>
+</header>
