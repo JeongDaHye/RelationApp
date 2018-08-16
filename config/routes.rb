@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'articles#index'
-  
+  resources :articles
   get   '/my_profile',      to: 'profiles#show'
   get   '/new_profile',     to: 'profiles#new'
   get   'create_profile',   to: 'profiles#new'

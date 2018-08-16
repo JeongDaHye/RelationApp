@@ -3,9 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 gem 'bootstrap'
 gem 'devise-bootstrap-views'
 gem "bootstrap_form", ">= 4.0.0.alpha1"
+gem 'tinymce-rails'
 gem 'pry-rails'
 gem 'rails', '~> 5.2.0'
 gem 'puma', '~> 3.11'

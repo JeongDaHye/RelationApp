@@ -57,6 +57,9 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
+    bootstrap4-kaminari-views (1.0.0)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     bootstrap_form (4.0.0.alpha1)
       rails (>= 5.0)
     builder (3.2.3)
@@ -232,6 +235,8 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    tinymce-rails (4.8.2)
+      railties (>= 3.1.1)
     turbolinks (5.1.1)
       turbolinks-source (~> 5.1)
     turbolinks-source (5.1.0)
@@ -259,6 +264,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap
+  bootstrap4-kaminari-views
   bootstrap_form (>= 4.0.0.alpha1)
   byebug
   capybara (>= 2.15, < 4.0)
@@ -268,6 +274,7 @@ DEPENDENCIES
   devise-bootstrap-views
   jbuilder (~> 2.5)
   jquery-rails
+  kaminari
   listen (>= 3.0.5, < 3.2)
   pry-rails
   puma (~> 3.11)
@@ -278,6 +285,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
+  tinymce-rails
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
