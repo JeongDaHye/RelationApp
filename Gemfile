@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'font-awesome-rails'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'bootstrap'

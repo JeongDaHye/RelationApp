@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :check_owner, only: [:edit, :update, :destroy]
   def new
     @article = Article.new
   end
@@ -37,18 +38,22 @@ class ArticlesController < ApplicationController
   
   def destroy
     if @article.destroy
-      redirect_to article_urls
+      redirect_to articles_url
     else
       redirect_back fallback_location: article_url(@article)
     end
   end
   
   private
-  def set_article
-    @article = Article.find(params[:id])
-  end
-  
-  def article_params
-    params.require(:article).permit(:title, :content)
-  end
+    def set_article
+      @article = Article.find(params[:id])
+    end
+    
+    def article_params
+      params.require(:article).permit(:title, :content)
+    end
+    
+    def check_owner
+      redirect_back fallback_location: root_url if @article.user != current_user
+    end
 end
