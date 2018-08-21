@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  # user
   devise_for :users
+  
+  #like
+  post '/articles/:id/like', to: 'likes#like_toggle', as: 'like_article'
+  
+  # article
   root 'articles#index'
   resources :articles
+  
+  # profile
   get   '/my_profile',      to: 'profiles#show'
   get   '/new_profile',     to: 'profiles#new'
   get   'create_profile',   to: 'profiles#new'

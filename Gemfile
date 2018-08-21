@@ -7,7 +7,6 @@ gem 'font-awesome-rails'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'bootstrap'
-gem 'devise-bootstrap-views'
 gem "bootstrap_form", ">= 4.0.0.alpha1"
 gem 'tinymce-rails'
 gem 'pry-rails'
