@@ -1,0 +1,17 @@
+<%= bootstrap_form_for song do |f| %>
+  <div>
+    <%= f.text_field :title %>
+  </div>
+  
+  <div>
+    <%= f.text_area :lyric, class: 'tinymce', rows: 15%>
+    <%= tinymce %>
+  </div>
+  
+  <div>
+    <%= f.file_field :cover %>
+  </div>
+  
+  <%= f.submit %>
+<% end %>
+

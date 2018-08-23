@@ -17,7 +17,6 @@ class ArticlesController < ApplicationController
   end
   
   def show
-    
   end
   
   def index
@@ -25,11 +24,10 @@ class ArticlesController < ApplicationController
   end
   
   def edit
-    
   end
   
   def update
-    if @article.update(article_params) && article.user == current_user
+    if @article.update(article_params) && @article.user == current_user
       redirect_to article_url(@article)
     else
       render 'edit'
