@@ -9,9 +9,10 @@
   </div>
   
   <div>
-    <%= f.file_field :cover %>
+    <%= f.file_field :cover, accept: 'image/jpeg, image/jpg, image/png, image/gif' %>
   </div>
   
   <%= f.submit %>
 <% end %>
+
 

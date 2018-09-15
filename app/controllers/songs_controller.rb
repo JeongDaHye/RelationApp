@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_song, only: [:show, :edit, :update, :destroy]
-  before_action :check_owner, only: [:edit, :update, :destroy]
+  
   def new
     @song = Song.new
   end
@@ -9,7 +9,7 @@ class SongsController < ApplicationController
   def create
     @song = Song.new(song_params)
     if @song.save
-      redirect_to song_url(@song.id)
+      redirect_to song_url(@song)
     else
       render 'new'
     end
@@ -21,6 +21,7 @@ class SongsController < ApplicationController
   end
 
   def show
+    
   end
 
   def edit
@@ -37,6 +38,7 @@ class SongsController < ApplicationController
   
   def destroy
     @song.destroy
+    redirect_back fallback_location: songs_url
   end
   
   private

@@ -1,0 +1,7 @@
+<h3><%= @artist.name %></h3>
+
+<%= link_to fa_icon('edit 2x'), edit_artist_path(@artist) %> | 
+<%= link_to fa_icon('trash 2x'), artist_path(@artist),  method: :delete, data: {confirm: '삭제하시겠습니까?' } %>
+<hr />
+<%= image_tag @artist.image.url if @artist.image? %>
+

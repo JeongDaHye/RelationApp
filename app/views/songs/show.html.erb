@@ -3,4 +3,5 @@
 <%= link_to fa_icon('edit 2x'), edit_song_path(@song) %> | 
 <%= link_to fa_icon('trash 2x'), song_path(@song),  method: :delete, data: {confirm: '삭제하시겠습니까?' } %>
 <hr />
+<%= image_tag @song.cover.url if @song.cover? %>
 <%= @song.lyric.html_safe %>

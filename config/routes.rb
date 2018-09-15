@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   # artist
   resources :artists
+  
   # user
   devise_for :users
   
