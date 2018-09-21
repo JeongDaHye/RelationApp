@@ -1,5 +1,8 @@
 class Song < ApplicationRecord
   mount_uploader :cover, CoverUploader
+  has_many :participates
+  has_many :artists, through: :participates, source: :artist 
+  #artists는 우리가 만든 것, artist는 model name
   
   validates :title, presence: true
   validates :lyric, length: { minimum: 10 }

@@ -3,5 +3,13 @@
 <%= link_to fa_icon('edit 2x'), edit_artist_path(@artist) %> | 
 <%= link_to fa_icon('trash 2x'), artist_path(@artist),  method: :delete, data: {confirm: '삭제하시겠습니까?' } %>
 <hr />
-<%= image_tag @artist.image.url if @artist.image? %>
+<%= image_tag @artist.image.url, class: "image_center" if @artist.image? %>
 
+<ul>
+  <% @artist.songs.each do |song| %>
+    <li>
+      <%= image_tag song.cover.thumb.url if song.cover %>
+      <%= link_to song.title, song_path(song) %>
+    </li>  
+  <% end %>
+</ul>

@@ -3,8 +3,9 @@
     <%= f.text_field :name %>
   </div>
   
-  <div>
-    <%#= f.select :nationality %>
+  <div class="form-group">
+    <label for="artist_nationality">nationality</label>
+    <%= f.country_select :nationality, class: "form-countrol", priority_countries: ["KR", "US", "CN", "JP"]%>
   </div>
   
   <div>
@@ -13,5 +14,14 @@
   
   <%= f.submit %>
 <% end %>
+
+ <script>
+   $('#artist_image').on('change',function(){
+     //get the file name
+     var fileName = $(this).val().replace(/^.*[\\\/]/, '');
+     //replace the "Choose a file" label
+     $(this).next('.custom-file-label').html(fileName);
+   })
+ </script>
 
 

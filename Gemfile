@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'country_select'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-rails'
