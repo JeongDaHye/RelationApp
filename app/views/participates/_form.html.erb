@@ -1,0 +1,5 @@
+<%= bootstrap_form_for participate do |f| %>
+  <%= f.select :artist_id, options_for_select(artists.collect{ |a| [a.name, a.id] }) %>
+  <%= f.select :song_id, options_for_select(songs.collect{ |s| [s.title, s.id] }) %>
+  <%= f.submit %>
+<% end %>

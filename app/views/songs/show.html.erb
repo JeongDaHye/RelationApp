@@ -1,6 +1,6 @@
 <h3><%= @song.title %></h3>
 
-<% if ['admin', 'editor'].include? current_user.profile.role %>
+<% if user_editable? %>
   <%= link_to fa_icon('edit 2x'), edit_song_path(@song) %> | 
   <%= link_to fa_icon('trash 2x'), song_path(@song),  method: :delete, data: {confirm: '삭제하시겠습니까?' } %>
 <% end %>

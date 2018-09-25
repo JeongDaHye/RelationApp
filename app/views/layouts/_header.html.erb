@@ -16,7 +16,7 @@
        <nav class="collapse navbar-collapse" id="navbarNav">
            <ul class="navbar-nav ml-uto">
               <li class="nav-item"><%=link_to 'Home', root_path, class: "nav-link"%></li>
-              <li class="nav-item"><%=link_to 'Jukebox', '#', class: "nav-link"%></li>
+              <li class="nav-item"><%=link_to 'Jukebox', jukebox_path, class: "nav-link"%></li>
               <li class="nav-item"><%=link_to 'Article', articles_path, class: "nav-link"%></li>
               <% if user_signed_in? %>
                 <li class="nav-item"><%=link_to 'Mypage', my_profile_path, class: "nav-link"%></li>
