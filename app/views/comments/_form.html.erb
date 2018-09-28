@@ -1,0 +1,12 @@
+<%= bootstrap_form_for Comment.new do |f| %>
+   <div>
+     <%= f.hidden_field :commentable_id, value: commentable.id%>
+     <%= f.hidden_field :commentable_type, value: commentable.class%>
+     <%= f.text_field :comment%>
+   </div>
+   
+   <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+<hr />

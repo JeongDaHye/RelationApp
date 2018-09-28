@@ -15,3 +15,6 @@
 </ul>
 <%= image_tag @song.cover.url, class: "image_center" if @song.cover? %>
 <%= @song.lyric.html_safe %>
+
+<%= render 'comments/form', commentable: @song %>
+<%= render 'comments/index', commentable: @song %>
