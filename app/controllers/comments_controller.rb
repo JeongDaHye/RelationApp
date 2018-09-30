@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_comment, only: [:destroy]
   def create
     @comment = Comment.new(comment_params)
@@ -9,7 +10,7 @@ class CommentsController < ApplicationController
   
   def destroy
     @comment.destroy
-    redirect_back fallback_location: root_url
+    redirect_to @comment.commentable
   end
   
   private

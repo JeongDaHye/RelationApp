@@ -11,9 +11,11 @@ Rails.application.routes.draw do
   
   # song
   resources :songs
+  post '/songs/:id/follow', to: 'follows#song_follow_toggle', as: 'song_follow'
   
   # artist
   resources :artists
+  post '/artists/:id/follow', to: 'follows#artist_follow_toggle', as: 'artist_follow'
   
   # user
   devise_for :users

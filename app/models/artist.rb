@@ -4,7 +4,7 @@ class Artist < ApplicationRecord
   has_many :songs, through: :participates, source: :song 
   #songs 우리가 만든 것, song은 model name
   acts_as_commentable
-  
+  acts_as_followable
   validates :name, presence: true
   #validates :nationality
   validate :image_size

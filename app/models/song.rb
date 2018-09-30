@@ -4,7 +4,7 @@ class Song < ApplicationRecord
   has_many :artists, through: :participates, source: :artist 
   #artists는 우리가 만든 것, artist는 model name
   acts_as_commentable
-  
+  acts_as_followable
   validates :title, presence: true
   validates :lyric, length: { minimum: 10 }
   validate :cover_size
