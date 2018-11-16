@@ -1,4 +1,4 @@
-<h3><%= @artist.name %></h3>
+<h2><%= @artist.name %></h2>
 
 <%if !@artist.followed_by?(current_user) %>
   <%= link_to 'Follow', artist_follow_path(@artist), method: :post %> 
